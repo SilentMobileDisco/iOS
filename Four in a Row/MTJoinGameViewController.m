@@ -151,8 +151,8 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
-    // Connect With Service
         NSLog(@"Service Did Resolve: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+    // TODO Initialize GStreamer service and move to a new view
     
 }
 
@@ -192,7 +192,7 @@ static NSString *ServiceCell = @"ServiceCell";
     
     // Configure Service Browser
     [self.serviceBrowser setDelegate:self];
-    [self.serviceBrowser searchForServicesOfType:@"_fourinarow._tcp." inDomain:@"local."];
+    [self.serviceBrowser searchForServicesOfType:@"_mobilesilentdisco._udp." inDomain:@"local."];
 }
 
 - (void)stopBrowsing {
