@@ -8,9 +8,8 @@
 
 #import "MTJoinGameViewController.h"
 
-@interface MTJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
+@interface MTJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate>
 
-@property (strong, nonatomic) GCDAsyncSocket *socket;
 @property (strong, nonatomic) NSMutableArray *services;
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
 
@@ -153,11 +152,8 @@ static NSString *ServiceCell = @"ServiceCell";
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
     // Connect With Service
-    if ([self connectWithService:service]) {
-        NSLog(@"Did Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
-    } else {
-        NSLog(@"Unable to Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
-    }
+        NSLog(@"Service Did Resolve: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+    
 }
 
 
@@ -207,34 +203,5 @@ static NSString *ServiceCell = @"ServiceCell";
     }
 }
 
-- (BOOL)connectWithService:(NSNetService *)service {
-    BOOL _isConnected = NO;
-    
-    // Copy Service Addresses
-    NSArray *addresses = [[service addresses] mutableCopy];
-    
-    if (!self.socket || ![self.socket isConnected]) {
-        // Initialize Socket
-        self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-        
-        // Connect
-        while (!_isConnected && [addresses count]) {
-            NSData *address = [addresses objectAtIndex:0];
-            
-            NSError *error = nil;
-            if ([self.socket connectToAddress:address error:&error]) {
-                _isConnected = YES;
-                
-            } else if (error) {
-                NSLog(@"Unable to connect to address. Error %@ with user info %@.", error, [error userInfo]);
-            }
-        }
-        
-    } else {
-        _isConnected = [self.socket isConnected];
-    }
-    
-    return _isConnected;
-}
 
 @end

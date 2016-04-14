@@ -8,10 +8,9 @@
 
 #import "MTHostGameViewController.h"
 
-@interface MTHostGameViewController () <NSNetServiceDelegate, GCDAsyncSocketDelegate>
+@interface MTHostGameViewController () <NSNetServiceDelegate>
 
 @property (strong, nonatomic) NSNetService *service;
-@property (strong, nonatomic) GCDAsyncSocket *socket;
 
 @end
 
@@ -71,26 +70,6 @@
     NSLog(@"Failed to Publish Service: domain(%@) type(%@) name(%@) - %@", [service domain], [service type], [service name], errorDict);
 }
 
-#pragma mark -
-#pragma mark Async Socket Delegate Methods
-- (void)socket:(GCDAsyncSocket *)socket didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
-    NSLog(@"Accepted New Socket from %@:%hu", [newSocket connectedHost], [newSocket connectedPort]);
-    
-    // Socket
-    [self setSocket:newSocket];
-    
-    // Read Data from Socket
-    [newSocket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
-}
-
-- (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    if (self.socket == socket) {
-        [self.socket setDelegate:nil];
-        [self setSocket:nil];
-    }
-}
 
 #pragma mark -
 #pragma mark View Methods
@@ -117,11 +96,8 @@
 #pragma mark Helper Methods
 - (void)startBroadcast {
     // Initialize GCDAsyncSocket
-    self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     
     // Start Listening for Incoming Connections
-    NSError *error = nil;
-    if ([self.socket acceptOnPort:0 error:&error]) {
         // Initialize Service
         self.service = [[NSNetService alloc] initWithDomain:@"local." type:@"_silentdisco._udp." name:@"SilentDiscoServer" port:8554];
         
@@ -131,9 +107,6 @@
         // Publish Servibonce
         [self.service publish];
         
-    } else {
-        NSLog(@"Unable to create socket. Error %@ with user info %@.", error, [error userInfo]);
-    }
 }
 
 @end
