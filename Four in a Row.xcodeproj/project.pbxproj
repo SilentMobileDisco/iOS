@@ -24,6 +24,8 @@
 		CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */; };
 		CC9F8DF41716ADB200810813 /* MTJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */; };
 		FFEA11931CBF657D00EE96CE /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEA11911CBF657D00EE96CE /* gst_ios_init.m */; };
+		FFEA11951CBF721D00EE96CE /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11941CBF721D00EE96CE /* GStreamer.framework */; };
+		FFEA11971CBF723D00EE96CE /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		FFEA11901CBF657D00EE96CE /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gst_ios_init.h; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/gst_ios_init.h"; sourceTree = "<group>"; };
 		FFEA11911CBF657D00EE96CE /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gst_ios_init.m; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/gst_ios_init.m"; sourceTree = "<group>"; };
 		FFEA11921CBF657D00EE96CE /* GStreamerBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GStreamerBackendDelegate.h; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/GStreamerBackendDelegate.h"; sourceTree = "<group>"; };
+		FFEA11941CBF721D00EE96CE /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
+		FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				CC9F8DEA17169D0E00810813 /* CFNetwork.framework in Frameworks */,
 				CC9F8DC517169C8E00810813 /* Foundation.framework in Frameworks */,
 				CC9F8DC717169C8E00810813 /* CoreGraphics.framework in Frameworks */,
+				FFEA11951CBF721D00EE96CE /* GStreamer.framework in Frameworks */,
+				FFEA11971CBF723D00EE96CE /* libiconv.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,8 @@
 		CC9F8DC117169C8E00810813 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */,
+				FFEA11941CBF721D00EE96CE /* GStreamer.framework */,
 				CC9F8DEB17169D1300810813 /* Security.framework */,
 				CC9F8DE917169D0E00810813 /* CFNetwork.framework */,
 				CC9F8DC217169C8E00810813 /* UIKit.framework */,
@@ -303,12 +311,16 @@
 		CC9F8DE317169C8E00810813 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Four in a Row/Four in a Row-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = "Four in a Row/Four in a Row-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
-				"OTHER_LDFLAGS[arch=*]" = (
+				OTHER_LDFLAGS = (
 					"-lresolv",
 					"-lstdc++",
 					"-framework",
@@ -344,12 +356,16 @@
 		CC9F8DE417169C8E00810813 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Four in a Row/Four in a Row-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
 				INFOPLIST_FILE = "Four in a Row/Four in a Row-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
-				"OTHER_LDFLAGS[arch=*]" = (
+				OTHER_LDFLAGS = (
 					"-lresolv",
 					"-lstdc++",
 					"-framework",
