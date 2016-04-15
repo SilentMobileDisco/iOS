@@ -1,22 +1,22 @@
 //
-//  MTAppDelegate.m
+//  SDAppDelegate.m
 //  Four in a Row
 //
 //  Created by Bart Jacobs on 11/04/13.
 //  Copyright (c) 2013 Mobile Tuts. All rights reserved.
 //
 
-#import "MTAppDelegate.h"
+#import "SDAppDelegate.h"
 
-#import "MTViewController.h"
+#import "SDViewController.h"
 
-@implementation MTAppDelegate
+@implementation SDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[MTViewController alloc] initWithNibName:@"MTViewController" bundle:nil];
+    self.viewController = [[SDViewController alloc] initWithNibName:@"SDViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

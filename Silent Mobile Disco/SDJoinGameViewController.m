@@ -1,21 +1,21 @@
 //
-//  MTJoinGameViewController.m
+//  SDJoinGameViewController.m
 //  Four in a Row
 //
 //  Created by Bart Jacobs on 11/04/13.
 //  Copyright (c) 2013 Mobile Tuts. All rights reserved.
 //
 
-#import "MTJoinGameViewController.h"
+#import "SDJoinGameViewController.h"
 
-@interface MTJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate>
+@interface SDJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate>
 
 @property (strong, nonatomic) NSMutableArray *services;
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
 
 @end
 
-@implementation MTJoinGameViewController
+@implementation SDJoinGameViewController
 
 static NSString *ServiceCell = @"ServiceCell";
 

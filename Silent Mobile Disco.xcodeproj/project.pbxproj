@@ -10,15 +10,15 @@
 		CC9F8DC317169C8E00810813 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC217169C8E00810813 /* UIKit.framework */; };
 		CC9F8DC517169C8E00810813 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC417169C8E00810813 /* Foundation.framework */; };
 		CC9F8DC717169C8E00810813 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC617169C8E00810813 /* CoreGraphics.framework */; };
-		CC9F8DDF17169C8E00810813 /* MTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DDD17169C8E00810813 /* MTViewController.xib */; };
+		CC9F8DDF17169C8E00810813 /* SDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DDD17169C8E00810813 /* SDViewController.xib */; };
 		CC9F8DEA17169D0E00810813 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DE917169D0E00810813 /* CFNetwork.framework */; };
 		CC9F8DEC17169D1300810813 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DEB17169D1300810813 /* Security.framework */; };
-		CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */; };
+		CC9F8DF11716A12F00810813 /* SDHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */; };
 		FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */; };
-		FF5A5DA91CC0902A00FD33A6 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DD217169C8E00810813 /* MTAppDelegate.m */; };
-		FF5A5DAA1CC0902A00FD33A6 /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DDB17169C8E00810813 /* MTViewController.m */; };
-		FF5A5DAB1CC0902A00FD33A6 /* MTHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */; };
-		FF5A5DAC1CC0902A00FD33A6 /* MTJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */; };
+		FF5A5DA91CC0902A00FD33A6 /* SDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DD217169C8E00810813 /* SDAppDelegate.m */; };
+		FF5A5DAA1CC0902A00FD33A6 /* SDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DDB17169C8E00810813 /* SDViewController.m */; };
+		FF5A5DAB1CC0902A00FD33A6 /* SDHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */; };
+		FF5A5DAC1CC0902A00FD33A6 /* SDJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */; };
 		FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */; };
 		FF5A5DB41CC0908A00FD33A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DCB17169C8E00810813 /* InfoPlist.strings */; };
 		FF5A5DB51CC0908A00FD33A6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD417169C8E00810813 /* Default.png */; };
@@ -37,21 +37,21 @@
 		CC9F8DC617169C8E00810813 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CC9F8DCC17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CC9F8DCE17169C8E00810813 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Silent Mobile Disco/main.m"; sourceTree = "<group>"; };
-		CC9F8DD117169C8E00810813 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTAppDelegate.h; path = "../Silent Mobile Disco/MTAppDelegate.h"; sourceTree = "<group>"; };
-		CC9F8DD217169C8E00810813 /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTAppDelegate.m; path = "../Silent Mobile Disco/MTAppDelegate.m"; sourceTree = "<group>"; };
+		CC9F8DD117169C8E00810813 /* SDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDAppDelegate.h; sourceTree = "<group>"; };
+		CC9F8DD217169C8E00810813 /* SDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDAppDelegate.m; sourceTree = "<group>"; };
 		CC9F8DD417169C8E00810813 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Silent Mobile Disco/Default.png"; sourceTree = "<group>"; };
 		CC9F8DD617169C8E00810813 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Silent Mobile Disco/Default@2x.png"; sourceTree = "<group>"; };
 		CC9F8DD817169C8E00810813 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Silent Mobile Disco/Default-568h@2x.png"; sourceTree = "<group>"; };
-		CC9F8DDA17169C8E00810813 /* MTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTViewController.h; path = "../Silent Mobile Disco/MTViewController.h"; sourceTree = "<group>"; };
-		CC9F8DDB17169C8E00810813 /* MTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTViewController.m; path = "../Silent Mobile Disco/MTViewController.m"; sourceTree = "<group>"; };
-		CC9F8DDE17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MTViewController.xib; sourceTree = "<group>"; };
+		CC9F8DDA17169C8E00810813 /* SDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDViewController.h; sourceTree = "<group>"; };
+		CC9F8DDB17169C8E00810813 /* SDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDViewController.m; sourceTree = "<group>"; };
+		CC9F8DDE17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SDViewController.xib; sourceTree = "<group>"; };
 		CC9F8DE917169D0E00810813 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CC9F8DEB17169D1300810813 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		CC9F8DED1716A12F00810813 /* MTHostGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTHostGameViewController.h; path = "../Silent Mobile Disco/MTHostGameViewController.h"; sourceTree = "<group>"; };
-		CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTHostGameViewController.m; path = "../Silent Mobile Disco/MTHostGameViewController.m"; sourceTree = "<group>"; };
-		CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTHostGameViewController.xib; path = "../Silent Mobile Disco/MTHostGameViewController.xib"; sourceTree = "<group>"; };
-		CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTJoinGameViewController.h; path = "../Silent Mobile Disco/MTJoinGameViewController.h"; sourceTree = "<group>"; };
-		CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTJoinGameViewController.m; path = "../Silent Mobile Disco/MTJoinGameViewController.m"; sourceTree = "<group>"; };
+		CC9F8DED1716A12F00810813 /* SDHostGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHostGameViewController.h; sourceTree = "<group>"; };
+		CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHostGameViewController.m; sourceTree = "<group>"; };
+		CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDHostGameViewController.xib; sourceTree = "<group>"; };
+		CC9F8DF21716ADB200810813 /* SDJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDJoinGameViewController.h; sourceTree = "<group>"; };
+		CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJoinGameViewController.m; sourceTree = "<group>"; };
 		FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Silent Mobile Disco-Info.plist"; path = "Silent Mobile Disco/Silent Mobile Disco-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FF25A3841CC08D92009CB69A /* Silent Mobile Disco-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Silent Mobile Disco-Prefix.pch"; path = "Silent Mobile Disco/Silent Mobile Disco-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FFEA11941CBF721D00EE96CE /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
@@ -115,16 +115,16 @@
 		CC9F8DC817169C8E00810813 /* Silent Mobile Disco */ = {
 			isa = PBXGroup;
 			children = (
-				CC9F8DD117169C8E00810813 /* MTAppDelegate.h */,
-				CC9F8DD217169C8E00810813 /* MTAppDelegate.m */,
-				CC9F8DDA17169C8E00810813 /* MTViewController.h */,
-				CC9F8DDB17169C8E00810813 /* MTViewController.m */,
-				CC9F8DDD17169C8E00810813 /* MTViewController.xib */,
-				CC9F8DED1716A12F00810813 /* MTHostGameViewController.h */,
-				CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */,
-				CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */,
-				CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */,
-				CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */,
+				CC9F8DD117169C8E00810813 /* SDAppDelegate.h */,
+				CC9F8DD217169C8E00810813 /* SDAppDelegate.m */,
+				CC9F8DDA17169C8E00810813 /* SDViewController.h */,
+				CC9F8DDB17169C8E00810813 /* SDViewController.m */,
+				CC9F8DDD17169C8E00810813 /* SDViewController.xib */,
+				CC9F8DED1716A12F00810813 /* SDHostGameViewController.h */,
+				CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */,
+				CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */,
+				CC9F8DF21716ADB200810813 /* SDJoinGameViewController.h */,
+				CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */,
 				FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */,
 				FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */,
 				CC9F8DC917169C8E00810813 /* Supporting Files */,
@@ -176,9 +176,9 @@
 		CC9F8DB717169C8E00810813 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MT;
+				CLASSPREFIX = SD;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Mobile Tuts";
+				ORGANIZATIONNAME = "Silent Mobile Disco";
 			};
 			buildConfigurationList = CC9F8DBA17169C8E00810813 /* Build configuration list for PBXProject "Silent Mobile Disco" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -207,8 +207,8 @@
 				FF5A5DB61CC0908A00FD33A6 /* Default@2x.png in Resources */,
 				FF5A5DB71CC0908A00FD33A6 /* Default-568h@2x.png in Resources */,
 				FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */,
-				CC9F8DDF17169C8E00810813 /* MTViewController.xib in Resources */,
-				CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */,
+				CC9F8DDF17169C8E00810813 /* SDViewController.xib in Resources */,
+				CC9F8DF11716A12F00810813 /* SDHostGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,11 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5A5DA91CC0902A00FD33A6 /* MTAppDelegate.m in Sources */,
-				FF5A5DAA1CC0902A00FD33A6 /* MTViewController.m in Sources */,
+				FF5A5DA91CC0902A00FD33A6 /* SDAppDelegate.m in Sources */,
+				FF5A5DAA1CC0902A00FD33A6 /* SDViewController.m in Sources */,
 				FF5A5DBF1CC0927E00FD33A6 /* gst_ios_init.m in Sources */,
-				FF5A5DAB1CC0902A00FD33A6 /* MTHostGameViewController.m in Sources */,
-				FF5A5DAC1CC0902A00FD33A6 /* MTJoinGameViewController.m in Sources */,
+				FF5A5DAB1CC0902A00FD33A6 /* SDHostGameViewController.m in Sources */,
+				FF5A5DAC1CC0902A00FD33A6 /* SDJoinGameViewController.m in Sources */,
 				FF5A5DC01CC0928200FD33A6 /* main.m in Sources */,
 				FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */,
 			);
@@ -241,12 +241,12 @@
 			path = "Silent Mobile Disco";
 			sourceTree = "<group>";
 		};
-		CC9F8DDD17169C8E00810813 /* MTViewController.xib */ = {
+		CC9F8DDD17169C8E00810813 /* SDViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CC9F8DDE17169C8E00810813 /* en */,
 			);
-			name = MTViewController.xib;
+			name = SDViewController.xib;
 			path = "../Silent Mobile Disco";
 			sourceTree = "<group>";
 		};

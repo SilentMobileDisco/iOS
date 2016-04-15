@@ -1,5 +1,5 @@
 //
-//  MTHostGameViewController.h
+//  SDViewController.h
 //  Four in a Row
 //
 //  Created by Bart Jacobs on 11/04/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MTHostGameViewController : UIViewController
+@interface SDViewController : UIViewController
 
 @end

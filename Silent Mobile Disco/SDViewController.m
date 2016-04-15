@@ -1,21 +1,21 @@
 //
-//  MTViewController.m
+//  SDViewController.m
 //  Four in a Row
 //
 //  Created by Bart Jacobs on 11/04/13.
 //  Copyright (c) 2013 Mobile Tuts. All rights reserved.
 //
 
-#import "MTViewController.h"
+#import "SDViewController.h"
 
-#import "MTHostGameViewController.h"
-#import "MTJoinGameViewController.h"
+#import "SDHostGameViewController.h"
+#import "SDJoinGameViewController.h"
 
-@interface MTViewController ()
+@interface SDViewController ()
 
 @end
 
-@implementation MTViewController
+@implementation SDViewController
 
 #pragma mark -
 #pragma mark Initialization
@@ -72,7 +72,7 @@
 #pragma mark Actions
 - (IBAction)hostGame:(id)sender {
     // Initialize Host Game View Controller
-    MTHostGameViewController *vc = [[MTHostGameViewController alloc] initWithNibName:@"MTHostGameViewController" bundle:[NSBundle mainBundle]];
+    SDHostGameViewController *vc = [[SDHostGameViewController alloc] initWithNibName:@"SDHostGameViewController" bundle:[NSBundle mainBundle]];
     
     // Initialize Navigation Controller
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -83,7 +83,7 @@
 
 - (IBAction)joinGame:(id)sender {
     // Initialize Join Game View Controller
-    MTJoinGameViewController *vc = [[MTJoinGameViewController alloc] initWithStyle:UITableViewStylePlain];
+    SDJoinGameViewController *vc = [[SDJoinGameViewController alloc] initWithStyle:UITableViewStylePlain];
     
     // Initialize Navigation Controller
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
