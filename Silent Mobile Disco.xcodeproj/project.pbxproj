@@ -10,56 +10,57 @@
 		CC9F8DC317169C8E00810813 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC217169C8E00810813 /* UIKit.framework */; };
 		CC9F8DC517169C8E00810813 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC417169C8E00810813 /* Foundation.framework */; };
 		CC9F8DC717169C8E00810813 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DC617169C8E00810813 /* CoreGraphics.framework */; };
-		CC9F8DCD17169C8E00810813 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DCB17169C8E00810813 /* InfoPlist.strings */; };
-		CC9F8DCF17169C8E00810813 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DCE17169C8E00810813 /* main.m */; };
-		CC9F8DD317169C8E00810813 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DD217169C8E00810813 /* MTAppDelegate.m */; };
-		CC9F8DD517169C8E00810813 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD417169C8E00810813 /* Default.png */; };
-		CC9F8DD717169C8E00810813 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD617169C8E00810813 /* Default@2x.png */; };
-		CC9F8DD917169C8E00810813 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD817169C8E00810813 /* Default-568h@2x.png */; };
-		CC9F8DDC17169C8E00810813 /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DDB17169C8E00810813 /* MTViewController.m */; };
 		CC9F8DDF17169C8E00810813 /* MTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DDD17169C8E00810813 /* MTViewController.xib */; };
 		CC9F8DEA17169D0E00810813 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DE917169D0E00810813 /* CFNetwork.framework */; };
 		CC9F8DEC17169D1300810813 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DEB17169D1300810813 /* Security.framework */; };
-		CC9F8DF01716A12F00810813 /* MTHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */; };
 		CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */; };
-		CC9F8DF41716ADB200810813 /* MTJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */; };
+		FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */; };
+		FF5A5DA91CC0902A00FD33A6 /* MTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DD217169C8E00810813 /* MTAppDelegate.m */; };
+		FF5A5DAA1CC0902A00FD33A6 /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DDB17169C8E00810813 /* MTViewController.m */; };
+		FF5A5DAB1CC0902A00FD33A6 /* MTHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */; };
+		FF5A5DAC1CC0902A00FD33A6 /* MTJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */; };
+		FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */; };
+		FF5A5DB41CC0908A00FD33A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DCB17169C8E00810813 /* InfoPlist.strings */; };
+		FF5A5DB51CC0908A00FD33A6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD417169C8E00810813 /* Default.png */; };
+		FF5A5DB61CC0908A00FD33A6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD617169C8E00810813 /* Default@2x.png */; };
+		FF5A5DB71CC0908A00FD33A6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD817169C8E00810813 /* Default-568h@2x.png */; };
+		FF5A5DBF1CC0927E00FD33A6 /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA41CC0865E00804E58 /* gst_ios_init.m */; };
+		FF5A5DC01CC0928200FD33A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DCE17169C8E00810813 /* main.m */; };
 		FFEA11951CBF721D00EE96CE /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11941CBF721D00EE96CE /* GStreamer.framework */; };
 		FFEA11971CBF723D00EE96CE /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */; };
-		FFF93BA51CC0865E00804E58 /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA41CC0865E00804E58 /* gst_ios_init.m */; };
-		FFF93BA81CC0866C00804E58 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC9F8DBF17169C8E00810813 /* Four in a Row.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four in a Row.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC9F8DBF17169C8E00810813 /* Silent Mobile Disco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silent Mobile Disco.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9F8DC217169C8E00810813 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CC9F8DC417169C8E00810813 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CC9F8DC617169C8E00810813 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CC9F8DCA17169C8E00810813 /* Four in a Row-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Four in a Row-Info.plist"; sourceTree = "<group>"; };
 		CC9F8DCC17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CC9F8DCE17169C8E00810813 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CC9F8DD017169C8E00810813 /* Four in a Row-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Four in a Row-Prefix.pch"; sourceTree = "<group>"; };
-		CC9F8DD117169C8E00810813 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAppDelegate.h; sourceTree = "<group>"; };
-		CC9F8DD217169C8E00810813 /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAppDelegate.m; sourceTree = "<group>"; };
-		CC9F8DD417169C8E00810813 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CC9F8DD617169C8E00810813 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CC9F8DD817169C8E00810813 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CC9F8DDA17169C8E00810813 /* MTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTViewController.h; sourceTree = "<group>"; };
-		CC9F8DDB17169C8E00810813 /* MTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTViewController.m; sourceTree = "<group>"; };
+		CC9F8DCE17169C8E00810813 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Silent Mobile Disco/main.m"; sourceTree = "<group>"; };
+		CC9F8DD117169C8E00810813 /* MTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTAppDelegate.h; path = "../Silent Mobile Disco/MTAppDelegate.h"; sourceTree = "<group>"; };
+		CC9F8DD217169C8E00810813 /* MTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTAppDelegate.m; path = "../Silent Mobile Disco/MTAppDelegate.m"; sourceTree = "<group>"; };
+		CC9F8DD417169C8E00810813 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Silent Mobile Disco/Default.png"; sourceTree = "<group>"; };
+		CC9F8DD617169C8E00810813 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Silent Mobile Disco/Default@2x.png"; sourceTree = "<group>"; };
+		CC9F8DD817169C8E00810813 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Silent Mobile Disco/Default-568h@2x.png"; sourceTree = "<group>"; };
+		CC9F8DDA17169C8E00810813 /* MTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTViewController.h; path = "../Silent Mobile Disco/MTViewController.h"; sourceTree = "<group>"; };
+		CC9F8DDB17169C8E00810813 /* MTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTViewController.m; path = "../Silent Mobile Disco/MTViewController.m"; sourceTree = "<group>"; };
 		CC9F8DDE17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MTViewController.xib; sourceTree = "<group>"; };
 		CC9F8DE917169D0E00810813 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CC9F8DEB17169D1300810813 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		CC9F8DED1716A12F00810813 /* MTHostGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHostGameViewController.h; sourceTree = "<group>"; };
-		CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHostGameViewController.m; sourceTree = "<group>"; };
-		CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHostGameViewController.xib; sourceTree = "<group>"; };
-		CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJoinGameViewController.h; sourceTree = "<group>"; };
-		CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTJoinGameViewController.m; sourceTree = "<group>"; };
+		CC9F8DED1716A12F00810813 /* MTHostGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTHostGameViewController.h; path = "../Silent Mobile Disco/MTHostGameViewController.h"; sourceTree = "<group>"; };
+		CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTHostGameViewController.m; path = "../Silent Mobile Disco/MTHostGameViewController.m"; sourceTree = "<group>"; };
+		CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTHostGameViewController.xib; path = "../Silent Mobile Disco/MTHostGameViewController.xib"; sourceTree = "<group>"; };
+		CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTJoinGameViewController.h; path = "../Silent Mobile Disco/MTJoinGameViewController.h"; sourceTree = "<group>"; };
+		CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTJoinGameViewController.m; path = "../Silent Mobile Disco/MTJoinGameViewController.m"; sourceTree = "<group>"; };
+		FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Silent Mobile Disco-Info.plist"; path = "Silent Mobile Disco/Silent Mobile Disco-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FF25A3841CC08D92009CB69A /* Silent Mobile Disco-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Silent Mobile Disco-Prefix.pch"; path = "Silent Mobile Disco/Silent Mobile Disco-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FFEA11941CBF721D00EE96CE /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
 		FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
-		FFF93BA21CC0864F00804E58 /* GStreamerBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerBackendDelegate.h; sourceTree = "<group>"; };
-		FFF93BA31CC0865E00804E58 /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gst_ios_init.h; sourceTree = "<group>"; };
-		FFF93BA41CC0865E00804E58 /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gst_ios_init.m; sourceTree = "<group>"; };
-		FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerBackend.h; sourceTree = "<group>"; };
-		FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GStreamerBackend.m; sourceTree = "<group>"; };
+		FFF93BA21CC0864F00804E58 /* GStreamerBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GStreamerBackendDelegate.h; path = "Silent Mobile Disco/GStreamerBackendDelegate.h"; sourceTree = "<group>"; };
+		FFF93BA31CC0865E00804E58 /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gst_ios_init.h; path = "Silent Mobile Disco/gst_ios_init.h"; sourceTree = "<group>"; };
+		FFF93BA41CC0865E00804E58 /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gst_ios_init.m; path = "Silent Mobile Disco/gst_ios_init.m"; sourceTree = "<group>"; };
+		FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GStreamerBackend.h; path = "../Silent Mobile Disco/GStreamerBackend.h"; sourceTree = "<group>"; };
+		FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GStreamerBackend.m; path = "../Silent Mobile Disco/GStreamerBackend.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +84,7 @@
 		CC9F8DB617169C8E00810813 = {
 			isa = PBXGroup;
 			children = (
-				CC9F8DC817169C8E00810813 /* Four in a Row */,
+				CC9F8DC817169C8E00810813 /* Silent Mobile Disco */,
 				CC9F8DC117169C8E00810813 /* Frameworks */,
 				CC9F8DC017169C8E00810813 /* Products */,
 			);
@@ -92,7 +93,7 @@
 		CC9F8DC017169C8E00810813 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC9F8DBF17169C8E00810813 /* Four in a Row.app */,
+				CC9F8DBF17169C8E00810813 /* Silent Mobile Disco.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,7 +112,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CC9F8DC817169C8E00810813 /* Four in a Row */ = {
+		CC9F8DC817169C8E00810813 /* Silent Mobile Disco */ = {
 			isa = PBXGroup;
 			children = (
 				CC9F8DD117169C8E00810813 /* MTAppDelegate.h */,
@@ -128,32 +129,33 @@
 				FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */,
 				CC9F8DC917169C8E00810813 /* Supporting Files */,
 			);
-			path = "Four in a Row";
+			path = "Silent Mobile Disco";
 			sourceTree = "<group>";
 		};
 		CC9F8DC917169C8E00810813 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CC9F8DCA17169C8E00810813 /* Four in a Row-Info.plist */,
 				FFF93BA21CC0864F00804E58 /* GStreamerBackendDelegate.h */,
+				FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */,
+				FF25A3841CC08D92009CB69A /* Silent Mobile Disco-Prefix.pch */,
 				FFF93BA31CC0865E00804E58 /* gst_ios_init.h */,
 				FFF93BA41CC0865E00804E58 /* gst_ios_init.m */,
 				CC9F8DCB17169C8E00810813 /* InfoPlist.strings */,
 				CC9F8DCE17169C8E00810813 /* main.m */,
-				CC9F8DD017169C8E00810813 /* Four in a Row-Prefix.pch */,
 				CC9F8DD417169C8E00810813 /* Default.png */,
 				CC9F8DD617169C8E00810813 /* Default@2x.png */,
 				CC9F8DD817169C8E00810813 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CC9F8DBE17169C8E00810813 /* Four in a Row */ = {
+		CC9F8DBE17169C8E00810813 /* Silent Mobile Disco */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC9F8DE217169C8E00810813 /* Build configuration list for PBXNativeTarget "Four in a Row" */;
+			buildConfigurationList = CC9F8DE217169C8E00810813 /* Build configuration list for PBXNativeTarget "Silent Mobile Disco" */;
 			buildPhases = (
 				CC9F8DBB17169C8E00810813 /* Sources */,
 				CC9F8DBC17169C8E00810813 /* Frameworks */,
@@ -163,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = "Four in a Row";
+			name = "Silent Mobile Disco";
 			productName = "Four in a Row";
-			productReference = CC9F8DBF17169C8E00810813 /* Four in a Row.app */;
+			productReference = CC9F8DBF17169C8E00810813 /* Silent Mobile Disco.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +180,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Mobile Tuts";
 			};
-			buildConfigurationList = CC9F8DBA17169C8E00810813 /* Build configuration list for PBXProject "Four in a Row" */;
+			buildConfigurationList = CC9F8DBA17169C8E00810813 /* Build configuration list for PBXProject "Silent Mobile Disco" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -190,7 +192,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC9F8DBE17169C8E00810813 /* Four in a Row */,
+				CC9F8DBE17169C8E00810813 /* Silent Mobile Disco */,
 			);
 		};
 /* End PBXProject section */
@@ -200,10 +202,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9F8DCD17169C8E00810813 /* InfoPlist.strings in Resources */,
-				CC9F8DD517169C8E00810813 /* Default.png in Resources */,
-				CC9F8DD717169C8E00810813 /* Default@2x.png in Resources */,
-				CC9F8DD917169C8E00810813 /* Default-568h@2x.png in Resources */,
+				FF5A5DB41CC0908A00FD33A6 /* InfoPlist.strings in Resources */,
+				FF5A5DB51CC0908A00FD33A6 /* Default.png in Resources */,
+				FF5A5DB61CC0908A00FD33A6 /* Default@2x.png in Resources */,
+				FF5A5DB71CC0908A00FD33A6 /* Default-568h@2x.png in Resources */,
+				FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */,
 				CC9F8DDF17169C8E00810813 /* MTViewController.xib in Resources */,
 				CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */,
 			);
@@ -216,13 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9F8DCF17169C8E00810813 /* main.m in Sources */,
-				CC9F8DD317169C8E00810813 /* MTAppDelegate.m in Sources */,
-				FFF93BA51CC0865E00804E58 /* gst_ios_init.m in Sources */,
-				FFF93BA81CC0866C00804E58 /* GStreamerBackend.m in Sources */,
-				CC9F8DDC17169C8E00810813 /* MTViewController.m in Sources */,
-				CC9F8DF01716A12F00810813 /* MTHostGameViewController.m in Sources */,
-				CC9F8DF41716ADB200810813 /* MTJoinGameViewController.m in Sources */,
+				FF5A5DA91CC0902A00FD33A6 /* MTAppDelegate.m in Sources */,
+				FF5A5DAA1CC0902A00FD33A6 /* MTViewController.m in Sources */,
+				FF5A5DBF1CC0927E00FD33A6 /* gst_ios_init.m in Sources */,
+				FF5A5DAB1CC0902A00FD33A6 /* MTHostGameViewController.m in Sources */,
+				FF5A5DAC1CC0902A00FD33A6 /* MTJoinGameViewController.m in Sources */,
+				FF5A5DC01CC0928200FD33A6 /* main.m in Sources */,
+				FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +238,7 @@
 				CC9F8DCC17169C8E00810813 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = "Silent Mobile Disco";
 			sourceTree = "<group>";
 		};
 		CC9F8DDD17169C8E00810813 /* MTViewController.xib */ = {
@@ -243,6 +247,7 @@
 				CC9F8DDE17169C8E00810813 /* en */,
 			);
 			name = MTViewController.xib;
+			path = "../Silent Mobile Disco";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -322,9 +327,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Four in a Row/Four in a Row-Prefix.pch";
+				GCC_PREFIX_HEADER = "Silent Mobile Disco/Silent Mobile Disco-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
-				INFOPLIST_FILE = "Four in a Row/Four in a Row-Info.plist";
+				INFOPLIST_FILE = "Silent Mobile Disco/Silent Mobile Disco-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-lresolv",
@@ -354,7 +359,7 @@
 					"-weak_framework",
 					VideoToolBox,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Silent Mobile Disco";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -367,9 +372,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Four in a Row/Four in a Row-Prefix.pch";
+				GCC_PREFIX_HEADER = "Silent Mobile Disco/Silent Mobile Disco-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
-				INFOPLIST_FILE = "Four in a Row/Four in a Row-Info.plist";
+				INFOPLIST_FILE = "Silent Mobile Disco/Silent Mobile Disco-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-lresolv",
@@ -399,7 +404,7 @@
 					"-weak_framework",
 					VideoToolBox,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Silent Mobile Disco";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -407,7 +412,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC9F8DBA17169C8E00810813 /* Build configuration list for PBXProject "Four in a Row" */ = {
+		CC9F8DBA17169C8E00810813 /* Build configuration list for PBXProject "Silent Mobile Disco" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC9F8DE017169C8E00810813 /* Debug */,
@@ -416,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC9F8DE217169C8E00810813 /* Build configuration list for PBXNativeTarget "Four in a Row" */ = {
+		CC9F8DE217169C8E00810813 /* Build configuration list for PBXNativeTarget "Silent Mobile Disco" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC9F8DE317169C8E00810813 /* Debug */,
