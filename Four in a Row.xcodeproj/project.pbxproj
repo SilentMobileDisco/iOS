@@ -23,9 +23,10 @@
 		CC9F8DF01716A12F00810813 /* MTHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* MTHostGameViewController.m */; };
 		CC9F8DF11716A12F00810813 /* MTHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */; };
 		CC9F8DF41716ADB200810813 /* MTJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */; };
-		FFEA11931CBF657D00EE96CE /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEA11911CBF657D00EE96CE /* gst_ios_init.m */; };
 		FFEA11951CBF721D00EE96CE /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11941CBF721D00EE96CE /* GStreamer.framework */; };
 		FFEA11971CBF723D00EE96CE /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */; };
+		FFF93BA51CC0865E00804E58 /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA41CC0865E00804E58 /* gst_ios_init.m */; };
+		FFF93BA81CC0866C00804E58 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,11 +53,13 @@
 		CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHostGameViewController.xib; sourceTree = "<group>"; };
 		CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTJoinGameViewController.h; sourceTree = "<group>"; };
 		CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTJoinGameViewController.m; sourceTree = "<group>"; };
-		FFEA11901CBF657D00EE96CE /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gst_ios_init.h; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/gst_ios_init.h"; sourceTree = "<group>"; };
-		FFEA11911CBF657D00EE96CE /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gst_ios_init.m; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/gst_ios_init.m"; sourceTree = "<group>"; };
-		FFEA11921CBF657D00EE96CE /* GStreamerBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GStreamerBackendDelegate.h; path = "../../../../git/gst-sdk-tutorials/gst-sdk/tutorials/xcode iOS/Tutorial 4/GStreamerBackendDelegate.h"; sourceTree = "<group>"; };
 		FFEA11941CBF721D00EE96CE /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
 		FFEA11961CBF723D00EE96CE /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
+		FFF93BA21CC0864F00804E58 /* GStreamerBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerBackendDelegate.h; sourceTree = "<group>"; };
+		FFF93BA31CC0865E00804E58 /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gst_ios_init.h; sourceTree = "<group>"; };
+		FFF93BA41CC0865E00804E58 /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gst_ios_init.m; sourceTree = "<group>"; };
+		FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerBackend.h; sourceTree = "<group>"; };
+		FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GStreamerBackend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				CC9F8DEF1716A12F00810813 /* MTHostGameViewController.xib */,
 				CC9F8DF21716ADB200810813 /* MTJoinGameViewController.h */,
 				CC9F8DF31716ADB200810813 /* MTJoinGameViewController.m */,
+				FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */,
+				FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */,
 				CC9F8DC917169C8E00810813 /* Supporting Files */,
 			);
 			path = "Four in a Row";
@@ -129,10 +134,10 @@
 		CC9F8DC917169C8E00810813 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FFEA11901CBF657D00EE96CE /* gst_ios_init.h */,
-				FFEA11911CBF657D00EE96CE /* gst_ios_init.m */,
-				FFEA11921CBF657D00EE96CE /* GStreamerBackendDelegate.h */,
 				CC9F8DCA17169C8E00810813 /* Four in a Row-Info.plist */,
+				FFF93BA21CC0864F00804E58 /* GStreamerBackendDelegate.h */,
+				FFF93BA31CC0865E00804E58 /* gst_ios_init.h */,
+				FFF93BA41CC0865E00804E58 /* gst_ios_init.m */,
 				CC9F8DCB17169C8E00810813 /* InfoPlist.strings */,
 				CC9F8DCE17169C8E00810813 /* main.m */,
 				CC9F8DD017169C8E00810813 /* Four in a Row-Prefix.pch */,
@@ -213,7 +218,8 @@
 			files = (
 				CC9F8DCF17169C8E00810813 /* main.m in Sources */,
 				CC9F8DD317169C8E00810813 /* MTAppDelegate.m in Sources */,
-				FFEA11931CBF657D00EE96CE /* gst_ios_init.m in Sources */,
+				FFF93BA51CC0865E00804E58 /* gst_ios_init.m in Sources */,
+				FFF93BA81CC0866C00804E58 /* GStreamerBackend.m in Sources */,
 				CC9F8DDC17169C8E00810813 /* MTViewController.m in Sources */,
 				CC9F8DF01716A12F00810813 /* MTHostGameViewController.m in Sources */,
 				CC9F8DF41716ADB200810813 /* MTJoinGameViewController.m in Sources */,
