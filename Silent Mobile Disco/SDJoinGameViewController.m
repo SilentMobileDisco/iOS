@@ -5,10 +5,17 @@
 //
 
 #import "SDJoinGameViewController.h"
+#import "SDDiscoViewController.h"
+#import <arpa/inet.h>
+#import "GStreamerBackend.h"
 
-@interface SDJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate>
+
+@interface SDJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate> {
+    
+}
 
 @property (strong, nonatomic) NSMutableArray *services;
+@property (strong, nonatomic) NSMutableArray *models;
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
 
 @end
@@ -149,8 +156,39 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
-        NSLog(@"Service Did Resolve: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
-    // TODO Initialize GStreamer service and move to a new view
+    char addressBuffer[INET6_ADDRSTRLEN];
+    for (NSData *data in [service addresses])
+    {
+        memset(addressBuffer, 0, INET6_ADDRSTRLEN);
+        
+        typedef union {
+            struct sockaddr sa;
+            struct sockaddr_in ipv4;
+            struct sockaddr_in6 ipv6;
+        } ip_socket_address;
+        
+        ip_socket_address *socketAddress = (ip_socket_address *)[data bytes];
+        
+        if (socketAddress && (socketAddress->sa.sa_family == AF_INET))
+        {
+            const char *addressStr = inet_ntop(
+                                               socketAddress->sa.sa_family,
+                                               (socketAddress->sa.sa_family == AF_INET ? (void *)&(socketAddress->ipv4.sin_addr) : (void *)&(socketAddress->ipv6.sin6_addr)),
+                                               addressBuffer,
+                                               sizeof(addressBuffer));
+            
+            int port = ntohs(socketAddress->sa.sa_family == AF_INET ? socketAddress->ipv4.sin_port : socketAddress->ipv6.sin6_port);
+            
+            if (addressStr && port)
+            {
+                NSString *uriString = [NSString stringWithFormat:@"rtsp://%@:%d/disco", [NSString stringWithUTF8String:addressStr], port];
+                
+                [gst_backend setUri:uriString];
+                NSLog(@"Did Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+            }
+        }
+        
+    }
     
 }
 
@@ -159,7 +197,7 @@ static NSString *ServiceCell = @"ServiceCell";
 #pragma mark View Methods
 - (void)setupView {
     // Create Cancel Button
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 }
 
 - (void)updateView {
@@ -190,7 +228,7 @@ static NSString *ServiceCell = @"ServiceCell";
     
     // Configure Service Browser
     [self.serviceBrowser setDelegate:self];
-    [self.serviceBrowser searchForServicesOfType:@"_mobilesilentdisco._udp." inDomain:@"local."];
+    [self.serviceBrowser searchForServicesOfType:@"_silentmobiledisco._udp." inDomain:@"local."];
 }
 
 - (void)stopBrowsing {
@@ -200,6 +238,20 @@ static NSString *ServiceCell = @"ServiceCell";
         [self setServiceBrowser:nil];
     }
 }
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    NSString *identifier = [segue identifier];
+    if ([identifier isEqualToString:@"start_disco_segue"]) {
+        SDDiscoViewController *vc = (SDDiscoViewController *) [segue destinationViewController];
+        [vc setIp:@"" andPort:@""];
+    }
+}
+
 
 
 @end
