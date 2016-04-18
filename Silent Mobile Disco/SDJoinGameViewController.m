@@ -6,6 +6,7 @@
 
 #import "SDJoinGameViewController.h"
 #import "SDDiscoViewController.h"
+#import "SDDiscoModel.h"
 #import <arpa/inet.h>
 #import "GStreamerBackend.h"
 
@@ -15,8 +16,9 @@
 }
 
 @property (strong, nonatomic) NSMutableArray *services;
-@property (strong, nonatomic) NSMutableArray *models;
+
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
+@property (strong, nonatomic) SDDiscoModel *selectedDisco;
 
 @end
 
@@ -71,11 +73,11 @@ static NSString *ServiceCell = @"ServiceCell";
 #pragma mark -
 #pragma mark Table View Data Source Methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.services ? 1 : 0;
+    return self.models ? 1 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.services count];
+    return [self.models count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,15 +85,16 @@ static NSString *ServiceCell = @"ServiceCell";
     
     if (!cell) {
         // Initialize Table View Cell
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ServiceCell];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ServiceCell];
     }
     
     // Fetch Service
-    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
-    
+//    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
+    SDDiscoModel *disco = [self.models objectAtIndex:[indexPath row]];
+
     // Configure Cell
-    [cell.textLabel setText:[service name]];
-    
+    [cell.textLabel setText:[disco name]];
+    [cell.detailTextLabel setText:[disco uri]];
     return cell;
 }
 
@@ -106,14 +109,16 @@ static NSString *ServiceCell = @"ServiceCell";
 #pragma mark -
 #pragma mark Table View Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    
+//    // Fetch Service
+////    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
+//    
+//    
+//    self.selectedDisco = [self.models objectAtIndex:indexPath.row];
+//    [self performSegueWithIdentifier:@"enter_disco_room" sender:self];
+
     
-    // Fetch Service
-    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
-    
-    // Resolve Service
-    [service setDelegate:self];
-    [service resolveWithTimeout:30.0];
 }
 
 #pragma mark -
@@ -127,20 +132,23 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)serviceBrowser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing {
-    // Update Services
+    // Resolve Service
     [self.services addObject:service];
     
-    if(!moreComing) {
-        // Sort Services
-        [self.services sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
-        
-        // Update Table View
-        [self.tableView reloadData];
-    }
+    [service setDelegate:self];
+    [service resolveWithTimeout:30.0];
+    
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)serviceBrowser didRemoveService:(NSNetService *)service moreComing:(BOOL)moreComing {
-    // Update Services
+    // If a service is removed, loop through and remove the relevant service
+    // For now, using model name suffices, but IP and port should also be compared.
+    for (SDDiscoModel *model in self.models) {
+        if ([[model name] isEqualToString:[service name]]) {
+            [self.models removeObject:model];
+        }
+    }
+    
     [self.services removeObject:service];
     
     if(!moreComing) {
@@ -156,39 +164,13 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
-    char addressBuffer[INET6_ADDRSTRLEN];
-    for (NSData *data in [service addresses])
-    {
-        memset(addressBuffer, 0, INET6_ADDRSTRLEN);
-        
-        typedef union {
-            struct sockaddr sa;
-            struct sockaddr_in ipv4;
-            struct sockaddr_in6 ipv6;
-        } ip_socket_address;
-        
-        ip_socket_address *socketAddress = (ip_socket_address *)[data bytes];
-        
-        if (socketAddress && (socketAddress->sa.sa_family == AF_INET))
-        {
-            const char *addressStr = inet_ntop(
-                                               socketAddress->sa.sa_family,
-                                               (socketAddress->sa.sa_family == AF_INET ? (void *)&(socketAddress->ipv4.sin_addr) : (void *)&(socketAddress->ipv6.sin6_addr)),
-                                               addressBuffer,
-                                               sizeof(addressBuffer));
-            
-            int port = ntohs(socketAddress->sa.sa_family == AF_INET ? socketAddress->ipv4.sin_port : socketAddress->ipv6.sin6_port);
-            
-            if (addressStr && port)
-            {
-                NSString *uriString = [NSString stringWithFormat:@"rtsp://%@:%d/disco", [NSString stringWithUTF8String:addressStr], port];
-                
-                [gst_backend setUri:uriString];
-                NSLog(@"Did Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
-            }
-        }
-        
-    }
+    SDDiscoModel *disco = [self createDiscoModelFromService:service];
+    
+    [self.models addObject:disco];
+    [self.tableView reloadData];
+
+    
+    NSLog(@"Did Discover Disco: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
     
 }
 
@@ -197,7 +179,7 @@ static NSString *ServiceCell = @"ServiceCell";
 #pragma mark View Methods
 - (void)setupView {
     // Create Cancel Button
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
 }
 
 - (void)updateView {
@@ -223,6 +205,12 @@ static NSString *ServiceCell = @"ServiceCell";
         self.services = [[NSMutableArray alloc] init];
     }
     
+    if (self.models) {
+        [self.models removeAllObjects];
+    } else {
+        self.models = [[NSMutableArray alloc] init];
+    }
+    
     // Initialize Service Browser
     self.serviceBrowser = [[NSNetServiceBrowser alloc] init];
     
@@ -245,13 +233,58 @@ static NSString *ServiceCell = @"ServiceCell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSString *identifier = [segue identifier];
-    if ([identifier isEqualToString:@"start_disco_segue"]) {
-        SDDiscoViewController *vc = (SDDiscoViewController *) [segue destinationViewController];
-        [vc setIp:@"" andPort:@""];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Fetch Service
+    //    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
+    
+    
+    self.selectedDisco = [self.models objectAtIndex:indexPath.row];
+
+    if ([segue.destinationViewController respondsToSelector:@selector(setDisco:)]) {
+        [segue.destinationViewController performSelector:@selector(setDisco:)
+                                              withObject:self.selectedDisco];
+
     }
+
 }
 
+- (SDDiscoModel *)createDiscoModelFromService:(NSNetService *)service {
+    char addressBuffer[INET6_ADDRSTRLEN];
+    for (NSData *data in [service addresses])
+    {
+        memset(addressBuffer, 0, INET6_ADDRSTRLEN);
+        
+        typedef union {
+            struct sockaddr sa;
+            struct sockaddr_in ipv4;
+            struct sockaddr_in6 ipv6;
+        } ip_socket_address;
+        
+        ip_socket_address *socketAddress = (ip_socket_address *)[data bytes];
+        
+        if (socketAddress && (socketAddress->sa.sa_family == AF_INET))
+        {
+            const char *addressStr = inet_ntop(
+                                               socketAddress->sa.sa_family,
+                                               (socketAddress->sa.sa_family == AF_INET ? (void *)&(socketAddress->ipv4.sin_addr) : (void *)&(socketAddress->ipv6.sin6_addr)),
+                                               addressBuffer,
+                                               sizeof(addressBuffer));
+            
+            int port = ntohs(socketAddress->sa.sa_family == AF_INET ? socketAddress->ipv4.sin_port : socketAddress->ipv6.sin6_port);
+            
+            if (addressStr && port)
+            {
+                SDDiscoModel* model = [[SDDiscoModel alloc] initWithName:service.name ip:[NSString stringWithUTF8String:addressStr] port:[NSString stringWithFormat:@"%d", port]];
+                return model;
+            }
+        }
+        
+    }
+    return NULL;
+
+}
 
 
 @end

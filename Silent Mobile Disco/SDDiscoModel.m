@@ -20,4 +20,8 @@
     return self;
 }
 
+- (NSString *)uri {
+    return [NSString stringWithFormat:@"rtsp://%@:%@/disco", self.ip, self.port];
+}
+
 @end

@@ -15,5 +15,6 @@
 @property (copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name ip:(NSString *)ip port:(NSString *)port;
+- (NSString *)uri;
 
 @end

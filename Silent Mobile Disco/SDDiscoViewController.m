@@ -7,16 +7,28 @@
 //
 
 #import "SDDiscoViewController.h"
+#import "GStreamerBackend.h"
+#import "SDDiscoModel.h"
 
-@interface SDDiscoViewController ()
+@interface SDDiscoViewController () <GStreamerBackendDelegate> {
+    GStreamerBackend *gst_backend;
+}
 
 @end
 
 @implementation SDDiscoViewController
 
+@synthesize disco;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    play_button.enabled = FALSE;
+    pause_button.enabled = FALSE;
+
+    gst_backend = [[GStreamerBackend alloc] init:self];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,8 +45,29 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)setIp:(NSString *)ip andPort:(NSString *)port {
-    
+
+- (void)onPause:(id)sender {
+    [gst_backend pause];
 }
+
+- (void)onPlay:(id)sender {
+    [gst_backend play];
+}
+
+-(void) gstreamerInitialized{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        play_button.enabled = TRUE;
+        pause_button.enabled = TRUE;
+        message_label.text = @"Ready";
+        [gst_backend setUri:[self.disco uri]];
+        dj_name.text = self.disco.name;
+    });
+
+}
+-(void) gstreamerSetUIMessage:(NSString *)message {
+    [self->message_label setText:message];
+}
+
+
 
 @end

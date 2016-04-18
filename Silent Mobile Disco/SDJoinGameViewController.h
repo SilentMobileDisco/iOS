@@ -11,4 +11,6 @@
     GStreamerBackend *gst_backend;
 }
 
+@property NSMutableArray* models;
+
 @end

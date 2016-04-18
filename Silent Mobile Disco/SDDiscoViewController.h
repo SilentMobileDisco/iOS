@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDDiscoModel.h"
+#import "GStreamerBackendDelegate.h"
 
-@interface SDDiscoViewController : UIViewController
+@interface SDDiscoViewController : UIViewController <GStreamerBackendDelegate> {
+    IBOutlet UILabel *message_label;
+    IBOutlet UILabel *dj_name;
+    IBOutlet UIBarButtonItem *play_button;
+    IBOutlet UIBarButtonItem *pause_button;
+}
 
-- (void)setIp:(NSString *)ip andPort:(NSString *)port;
+@property SDDiscoModel *disco;
+
+- (IBAction) onPlay:(id) sender;
+- (IBAction) onPause:(id) sender;
+
+/* From GStreamerBackendDelegate */
+-(void) gstreamerInitialized;
+-(void) gstreamerSetUIMessage:(NSString *)message;
 
 @end

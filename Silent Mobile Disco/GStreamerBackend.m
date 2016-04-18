@@ -23,7 +23,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
     GMainContext *context;       /* GLib context used to run the main loop */
     GMainLoop *main_loop;        /* GLib main loop */
     gboolean initialized;        /* To avoid informing the UI multiple times about the initialization */
-    UIView *ui_video_view;       /* UIView that holds the video */
     GstState state;              /* Current pipeline state */
     GstState target_state;       /* Desired pipeline state, to be set once buffering is complete */
     gint64 duration;             /* Cached clip duration */
@@ -36,12 +35,11 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
  * Interface methods
  */
 
--(id) init:(id) uiDelegate videoView:(UIView *)video_view
+-(id) init:(id) uiDelegate
 {
     if (self = [super init])
     {
         self->ui_delegate = uiDelegate;
-        self->ui_video_view = video_view;
         self->duration = GST_CLOCK_TIME_NONE;
 
         GST_DEBUG_CATEGORY_INIT (debug_category, "tutorial-4", 0, "iOS tutorial 4");
@@ -322,7 +320,7 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerBackend *se
     g_main_context_push_thread_default(context);
     
     /* Build pipeline */
-    pipeline = gst_parse_launch("playbin", &error);
+    pipeline = gst_parse_launch("playbin uri=rtsp://10.0.0.14:8554/test uridecodebin0::source::latency=50", &error);
     if (error) {
         gchar *message = g_strdup_printf("Unable to build pipeline: %s", error->message);
         g_clear_error (&error);
@@ -339,7 +337,7 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerBackend *se
         GST_ERROR ("Could not retrieve video sink");
         return;
     }
-    gst_video_overlay_set_window_handle(GST_VIDEO_OVERLAY(video_sink), (guintptr) (id) ui_video_view);
+//    gst_video_overlay_set_window_handle(GST_VIDEO_OVERLAY(video_sink), (guintptr) (id) ui_video_view);
 
     /* Instruct the bus to emit signals for each received message, and connect to the interesting signals */
     bus = gst_element_get_bus (pipeline);
@@ -378,7 +376,7 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerBackend *se
     pipeline = NULL;
     
     ui_delegate = NULL;
-    ui_video_view = NULL;
+//    ui_video_view = NULL;
 
     return;
 }
