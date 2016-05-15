@@ -88,8 +88,6 @@ static NSString *ServiceCell = @"ServiceCell";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ServiceCell];
     }
     
-    // Fetch Service
-//    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
     SDDiscoModel *disco = [self.models objectAtIndex:[indexPath row]];
 
     // Configure Cell
@@ -109,16 +107,7 @@ static NSString *ServiceCell = @"ServiceCell";
 #pragma mark -
 #pragma mark Table View Delegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    
-//    // Fetch Service
-////    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
-//    
-//    
-//    self.selectedDisco = [self.models objectAtIndex:indexPath.row];
-//    [self performSegueWithIdentifier:@"enter_disco_room" sender:self];
-
-    
+    // Left empty because all logic is handled in prepareSegue:sender:
 }
 
 #pragma mark -
@@ -236,16 +225,11 @@ static NSString *ServiceCell = @"ServiceCell";
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    // Fetch Service
-    //    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
-    
-    
     self.selectedDisco = [self.models objectAtIndex:indexPath.row];
 
     if ([segue.destinationViewController respondsToSelector:@selector(setDisco:)]) {
         [segue.destinationViewController performSelector:@selector(setDisco:)
                                               withObject:self.selectedDisco];
-
     }
 
 }

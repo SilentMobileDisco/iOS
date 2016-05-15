@@ -22,7 +22,4 @@
 /* Set the URI to be played */
 -(void) setUri:(NSString*)uri;
 
-/* Set the position to seek to, in milliseconds */
--(void) setPosition:(NSInteger)milliseconds;
-
 @end

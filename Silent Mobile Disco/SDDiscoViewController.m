@@ -59,13 +59,15 @@
         play_button.enabled = TRUE;
         pause_button.enabled = TRUE;
         message_label.text = @"Ready";
-        [gst_backend setUri:[self.disco uri]];
+//        [gst_backend setUri:[self.disco uri]];
         dj_name.text = self.disco.name;
     });
 
 }
 -(void) gstreamerSetUIMessage:(NSString *)message {
-    [self->message_label setText:message];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        message_label.text = message;
+    });
 }
 
 
