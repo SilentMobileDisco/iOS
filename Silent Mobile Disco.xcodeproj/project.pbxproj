@@ -13,15 +13,13 @@
 		CC9F8DDF17169C8E00810813 /* SDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DDD17169C8E00810813 /* SDViewController.xib */; };
 		CC9F8DEA17169D0E00810813 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DE917169D0E00810813 /* CFNetwork.framework */; };
 		CC9F8DEC17169D1300810813 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F8DEB17169D1300810813 /* Security.framework */; };
-		CC9F8DF11716A12F00810813 /* SDHostGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */; };
 		FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */; };
 		FF4D1B9A1CC2C52500A4B775 /* SDDiscoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4D1B981CC2C52500A4B775 /* SDDiscoViewController.m */; };
 		FF4D1B9B1CC2C52500A4B775 /* SDDiscoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4D1B991CC2C52500A4B775 /* SDDiscoViewController.xib */; };
 		FF4D1B9D1CC2C74700A4B775 /* Disco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4D1B9C1CC2C74700A4B775 /* Disco.storyboard */; };
 		FF5A5DA91CC0902A00FD33A6 /* SDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DD217169C8E00810813 /* SDAppDelegate.m */; };
 		FF5A5DAA1CC0902A00FD33A6 /* SDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DDB17169C8E00810813 /* SDViewController.m */; };
-		FF5A5DAB1CC0902A00FD33A6 /* SDHostGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */; };
-		FF5A5DAC1CC0902A00FD33A6 /* SDJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */; };
+		FF5A5DAC1CC0902A00FD33A6 /* SDJoinDiscoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F8DF31716ADB200810813 /* SDJoinDiscoViewController.m */; };
 		FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF93BA71CC0866C00804E58 /* GStreamerBackend.m */; };
 		FF5A5DB41CC0908A00FD33A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DCB17169C8E00810813 /* InfoPlist.strings */; };
 		FF5A5DB51CC0908A00FD33A6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9F8DD417169C8E00810813 /* Default.png */; };
@@ -51,11 +49,8 @@
 		CC9F8DDE17169C8E00810813 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SDViewController.xib; sourceTree = "<group>"; };
 		CC9F8DE917169D0E00810813 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CC9F8DEB17169D1300810813 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		CC9F8DED1716A12F00810813 /* SDHostGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHostGameViewController.h; sourceTree = "<group>"; };
-		CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHostGameViewController.m; sourceTree = "<group>"; };
-		CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDHostGameViewController.xib; sourceTree = "<group>"; };
-		CC9F8DF21716ADB200810813 /* SDJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDJoinGameViewController.h; sourceTree = "<group>"; };
-		CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJoinGameViewController.m; sourceTree = "<group>"; };
+		CC9F8DF21716ADB200810813 /* SDJoinDiscoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDJoinDiscoViewController.h; sourceTree = "<group>"; };
+		CC9F8DF31716ADB200810813 /* SDJoinDiscoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDJoinDiscoViewController.m; sourceTree = "<group>"; };
 		FF25A3831CC08D92009CB69A /* Silent Mobile Disco-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Silent Mobile Disco-Info.plist"; path = "Silent Mobile Disco/Silent Mobile Disco-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FF25A3841CC08D92009CB69A /* Silent Mobile Disco-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Silent Mobile Disco-Prefix.pch"; path = "Silent Mobile Disco/Silent Mobile Disco-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FF4D1B971CC2C52500A4B775 /* SDDiscoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDiscoViewController.h; sourceTree = "<group>"; };
@@ -134,11 +129,8 @@
 				CC9F8DDA17169C8E00810813 /* SDViewController.h */,
 				CC9F8DDB17169C8E00810813 /* SDViewController.m */,
 				CC9F8DDD17169C8E00810813 /* SDViewController.xib */,
-				CC9F8DED1716A12F00810813 /* SDHostGameViewController.h */,
-				CC9F8DEE1716A12F00810813 /* SDHostGameViewController.m */,
-				CC9F8DEF1716A12F00810813 /* SDHostGameViewController.xib */,
-				CC9F8DF21716ADB200810813 /* SDJoinGameViewController.h */,
-				CC9F8DF31716ADB200810813 /* SDJoinGameViewController.m */,
+				CC9F8DF21716ADB200810813 /* SDJoinDiscoViewController.h */,
+				CC9F8DF31716ADB200810813 /* SDJoinDiscoViewController.m */,
 				FFEDF6211CC2E0CE00039785 /* SDDiscoModel.h */,
 				FFEDF6221CC2E0CE00039785 /* SDDiscoModel.m */,
 				FFF93BA61CC0866C00804E58 /* GStreamerBackend.h */,
@@ -225,7 +217,6 @@
 				FF5A5DB71CC0908A00FD33A6 /* Default-568h@2x.png in Resources */,
 				FF25A3851CC08D92009CB69A /* Silent Mobile Disco-Info.plist in Resources */,
 				CC9F8DDF17169C8E00810813 /* SDViewController.xib in Resources */,
-				CC9F8DF11716A12F00810813 /* SDHostGameViewController.xib in Resources */,
 				FF4D1B9D1CC2C74700A4B775 /* Disco.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,9 +232,8 @@
 				FF5A5DAA1CC0902A00FD33A6 /* SDViewController.m in Sources */,
 				FF4D1B9A1CC2C52500A4B775 /* SDDiscoViewController.m in Sources */,
 				FF5A5DBF1CC0927E00FD33A6 /* gst_ios_init.m in Sources */,
-				FF5A5DAB1CC0902A00FD33A6 /* SDHostGameViewController.m in Sources */,
 				FFEDF6231CC2E0CE00039785 /* SDDiscoModel.m in Sources */,
-				FF5A5DAC1CC0902A00FD33A6 /* SDJoinGameViewController.m in Sources */,
+				FF5A5DAC1CC0902A00FD33A6 /* SDJoinDiscoViewController.m in Sources */,
 				FF5A5DC01CC0928200FD33A6 /* main.m in Sources */,
 				FF5A5DAD1CC0902A00FD33A6 /* GStreamerBackend.m in Sources */,
 			);

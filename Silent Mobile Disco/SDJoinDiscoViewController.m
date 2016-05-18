@@ -236,18 +236,30 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (NSString *)getCapsStringFromTXTRecord:(NSData *)data {
-    NSString *caps = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSString *caps = dataString;
     NSString *prefix = @"caps=";
-    if ([caps containsString:prefix]) {
-        NSUInteger ind = [caps rangeOfString:prefix].location + prefix.length;
-        caps = [caps substringFromIndex:ind];
+    if ([dataString containsString:prefix]) {
+        NSUInteger ind = [dataString rangeOfString:prefix].location + prefix.length;
+        caps = [dataString substringFromIndex:ind];
     }
-    return caps;
+    return dataString;
+}
+
+- (NSInteger)getBaseTimeFromTXTRecord:(NSData *)data {
+    NSString *dataString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSString *prefix = @"bt=";
+    NSInteger baseTime = 0;
+    if ([dataString containsString:prefix]) {
+        NSUInteger ind = [dataString rangeOfString:prefix].location + prefix.length;
+        baseTime = [[dataString substringFromIndex:ind]  integerValue];
+    }
+    return baseTime;
 }
 - (SDDiscoModel *)createDiscoModelFromService:(NSNetService *)service {
     char addressBuffer[INET6_ADDRSTRLEN];
     NSString *caps = [self getCapsStringFromTXTRecord:[service TXTRecordData]];
-
+    NSInteger baseTime = [self getBaseTimeFromTXTRecord:[service TXTRecordData]];
 
     for (NSData *data in [service addresses])
     {
@@ -273,7 +285,7 @@ static NSString *ServiceCell = @"ServiceCell";
             
             if (addressStr && port)
             {
-                SDDiscoModel* model = [[SDDiscoModel alloc] initWithName:service.name ip:[NSString stringWithUTF8String:addressStr] port:[NSString stringWithFormat:@"%d", port] caps:caps];
+                SDDiscoModel* model = [[SDDiscoModel alloc] initWithName:service.name ip:[NSString stringWithUTF8String:addressStr] port:[NSString stringWithFormat:@"%d", port] caps:caps baseTime:baseTime];
                 return model;
             }
         }

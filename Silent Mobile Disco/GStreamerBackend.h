@@ -6,7 +6,7 @@
 /* Initialization method. Pass the delegate that will take care of the UI.
  * This delegate must implement the GStreamerBackendDelegate protocol.
  */
--(id) init:(id)uiDelegate ip:(NSString *)ip caps:(NSString *)caps;
+-(id) init:(id)uiDelegate ip:(NSString *)ip caps:(NSString *)caps baseTime:(NSInteger)base;
 
 /* Quit the main loop and free all resources, including the pipeline and
  * the references to the ui delegate and the UIView used for rendering, so

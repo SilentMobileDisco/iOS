@@ -28,7 +28,8 @@
 
     gst_backend = [[GStreamerBackend alloc] init:self
                                               ip:self.disco.ip
-                                            caps:self.disco.caps];
+                                            caps:self.disco.caps
+                                        baseTime:self.disco.baseTime];
     
     
 }
