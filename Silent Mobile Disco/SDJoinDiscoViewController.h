@@ -7,7 +7,7 @@
 #import <UIKit/UIKit.h>
 #import "GStreamerBackend.h"
 
-@interface SDJoinGameViewController : UITableViewController <GStreamerBackendDelegate> {
+@interface SDJoinDiscoViewController : UITableViewController <GStreamerBackendDelegate> {
     GStreamerBackend *gst_backend;
 }
 

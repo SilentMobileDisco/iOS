@@ -4,14 +4,14 @@
 //
 //
 
-#import "SDJoinGameViewController.h"
+#import "SDJoinDiscoViewController.h"
 #import "SDDiscoViewController.h"
 #import "SDDiscoModel.h"
 #import <arpa/inet.h>
 #import "GStreamerBackend.h"
 
 
-@interface SDJoinGameViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate> {
+@interface SDJoinDiscoViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate> {
     
 }
 
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation SDJoinGameViewController
+@implementation SDJoinDiscoViewController
 
 static NSString *ServiceCell = @"ServiceCell";
 
