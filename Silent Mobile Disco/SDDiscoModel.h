@@ -13,8 +13,9 @@
 @property (copy) NSString *ip;
 @property (copy) NSString *port;
 @property (copy) NSString *name;
+@property (copy) NSString *caps;
 
-- (instancetype)initWithName:(NSString *)name ip:(NSString *)ip port:(NSString *)port;
+- (instancetype)initWithName:(NSString *)name ip:(NSString *)ip port:(NSString *)port caps:(NSString *)caps;
 - (NSString *)uri;
 
 @end

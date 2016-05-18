@@ -26,7 +26,9 @@
     play_button.enabled = FALSE;
     pause_button.enabled = FALSE;
 
-    gst_backend = [[GStreamerBackend alloc] init:self];
+    gst_backend = [[GStreamerBackend alloc] init:self
+                                              ip:self.disco.ip
+                                            caps:self.disco.caps];
     
     
 }
@@ -59,7 +61,7 @@
         play_button.enabled = TRUE;
         pause_button.enabled = TRUE;
         message_label.text = @"Ready";
-//        [gst_backend setUri:[self.disco uri]];
+        [gst_backend setIp:[self.disco ip]];
         dj_name.text = self.disco.name;
     });
 

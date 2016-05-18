@@ -32,6 +32,7 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
 -(void)setUIMessage:(gchar*) message;
 -(void)app_function;
 -(void)check_initialization_complete;
+
 @end
 
 @implementation GStreamerBackend {
@@ -47,19 +48,22 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
     gint64 desired_position;     /* Position to seek to, once the pipeline is running */
     GstClockTime last_seek_time; /* For seeking overflow prevention (throttling) */
     gboolean is_live;            /* Live streams do not use buffering */
+    NSString *capsString;
 }
 
 /*
  * Interface methods
  */
 
--(id) init:(id) uiDelegate
+-(id) init:(id) uiDelegate ip:(NSString *)ip caps:(NSString *)caps
 {
     if (self = [super init])
     {
         self->ui_delegate = uiDelegate;
         self->duration = GST_CLOCK_TIME_NONE;
-
+        self.ip = ip;
+        self->capsString = caps;
+        
         GST_DEBUG_CATEGORY_INIT (debug_category, "tutorial-4", 0, "iOS tutorial 4");
         gst_debug_set_threshold_for_name("tutorial-4", GST_LEVEL_DEBUG);
 
@@ -292,8 +296,7 @@ pad_added_cb (GstElement * rtpbin, GstPad * new_pad, GstElement * depay)
 
     GstClock *net_clock;
     
-    
-    net_clock = gst_net_client_clock_new ("net_clock", "0.0.0.0", 8554, 0);
+    net_clock = gst_net_client_clock_new ("net_clock", [self.ip UTF8String], 8554, 0);
     if (net_clock == NULL) {
         g_print ("Failed to create net clock client");
         return;
@@ -316,7 +319,7 @@ pad_added_cb (GstElement * rtpbin, GstPad * new_pad, GstElement * depay)
     g_assert (rtpsrc);
     g_object_set (rtpsrc, "port", 5002, NULL);
     /* we need to set caps on the udpsrc for the RTP data */
-    caps = gst_caps_from_string (AUDIO_CAPS);
+    caps = gst_caps_from_string ([self->capsString UTF8String]);
     g_object_set (rtpsrc, "caps", caps, NULL);
     
     /* Multicast flags */

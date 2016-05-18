@@ -154,6 +154,7 @@ static NSString *ServiceCell = @"ServiceCell";
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
     SDDiscoModel *disco = [self createDiscoModelFromService:service];
+    NSLog( [NSString stringWithFormat:@"%@", service.TXTRecordData]);
     
     [self.models addObject:disco];
     [self.tableView reloadData];
@@ -234,8 +235,20 @@ static NSString *ServiceCell = @"ServiceCell";
 
 }
 
+- (NSString *)getCapsStringFromTXTRecord:(NSData *)data {
+    NSString *caps = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSString *prefix = @"caps=";
+    if ([caps containsString:prefix]) {
+        NSUInteger ind = [caps rangeOfString:prefix].location + prefix.length;
+        caps = [caps substringFromIndex:ind];
+    }
+    return caps;
+}
 - (SDDiscoModel *)createDiscoModelFromService:(NSNetService *)service {
     char addressBuffer[INET6_ADDRSTRLEN];
+    NSString *caps = [self getCapsStringFromTXTRecord:[service TXTRecordData]];
+
+
     for (NSData *data in [service addresses])
     {
         memset(addressBuffer, 0, INET6_ADDRSTRLEN);
@@ -260,7 +273,7 @@ static NSString *ServiceCell = @"ServiceCell";
             
             if (addressStr && port)
             {
-                SDDiscoModel* model = [[SDDiscoModel alloc] initWithName:service.name ip:[NSString stringWithUTF8String:addressStr] port:[NSString stringWithFormat:@"%d", port]];
+                SDDiscoModel* model = [[SDDiscoModel alloc] initWithName:service.name ip:[NSString stringWithUTF8String:addressStr] port:[NSString stringWithFormat:@"%d", port] caps:caps];
                 return model;
             }
         }

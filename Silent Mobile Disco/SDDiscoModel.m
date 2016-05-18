@@ -10,12 +10,13 @@
 
 @implementation SDDiscoModel
 
-- (id)initWithName:(NSString *)name ip:(NSString *)ip port:(NSString *)port {
+- (id)initWithName:(NSString *)name ip:(NSString *)ip port:(NSString *)port caps:(NSString *)caps {
     self = [super init];
     if (self) {
         _name = name;
         _ip = ip;
         _port = port;
+        _caps = caps;
     }
     return self;
 }
